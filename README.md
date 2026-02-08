@@ -30,7 +30,7 @@ Run this command, but make sure you are in src folder
 -d ../bin → put .class files in bin
 Compile both manager and tester packages
 ### Run this command, but the current working directory (cwd) must be in bin folder
-'cd ../bin`
+`cd ../bin`
 `java com.sms.tester.StudentManagementTester`
 run the main class which has main method
 
