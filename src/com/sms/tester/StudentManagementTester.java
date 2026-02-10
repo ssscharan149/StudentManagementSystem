@@ -1,12 +1,13 @@
 package com.sms.tester;
 
 import java.util.Scanner;
-import com.sms.manager.StudentManager;
-import com.sms.utils.InvalidStudentDetailsException;
+import com.sms.manager.*;
+import com.sms.utils.*;
+
 
 public class StudentManagementTester {
   public static void main(String[] args) {
-    StudentManager st = new StudentManager();
+    StudentManagerUsingDB st = new StudentManagerUsingDB();
     Scanner sc = new Scanner(System.in);
     while(true){
       System.out.println(".".repeat(150));
@@ -15,7 +16,8 @@ public class StudentManagementTester {
       System.out.println("2. Remove student");
       System.out.println("3. View student by Id");
       System.out.println("4. View all students");
-      System.out.println("5. Sort students according to their id or name and view them");
+      System.out.println("5. Sort students by name and view");
+      System.out.println("6. Sort students by id and view");
       System.out.println("0. Exit");
       System.out.println(".".repeat(150));
       int choice = sc.nextInt();
@@ -41,7 +43,7 @@ public class StudentManagementTester {
           System.out.println("Enter Country");
           String country = sc.nextLine();
           System.out.println("Enter Pincode");
-          Long pincode = sc.nextLong();
+          int pincode = sc.nextInt();
           sc.nextLine();
           try {
             st.addNewStudent(id,name,phn,email,city,country,pincode);
@@ -69,9 +71,11 @@ public class StudentManagementTester {
           break;
         }
         case 5:{
-          System.out.println("Enter sort by parameter that is either id or name");
-          String sortBy = sc.nextLine();
-          st.sortAndViewStudents(sortBy);
+          st.sortStudentsByName();
+          break;
+        }
+        case 6:{
+          st.sortStudentsById();
           break;
         }
         default:

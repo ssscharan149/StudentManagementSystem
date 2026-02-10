@@ -47,7 +47,7 @@ public class StudentImplementor implements Student{
   }
 
   @Override
-  public void setAddressInfo(String city, String country, Long pincode) {
+  public void setAddressInfo(String city, String country, int pincode) {
     this.addInfo = new AddressInfo();
     this.addInfo.city = city;
     this.addInfo.country = country;

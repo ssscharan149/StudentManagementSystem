@@ -11,7 +11,7 @@ public class StudentManager {
     this.stSet = new LinkedHashSet<>();
     this.v = new ValidateEmailAndPhoneNumber();
   }
-  public void addNewStudent(String stId, String stName, String phn, String email, String city, String country, Long pincode ) throws InvalidStudentDetailsException{
+  public void addNewStudent(String stId, String stName, String phn, String email, String city, String country, int pincode ) throws InvalidStudentDetailsException{
     if(isStudentExists(stId)){
       System.out.println("=".repeat(150));
       System.out.println("Student with studentId "+stId+" already exists");

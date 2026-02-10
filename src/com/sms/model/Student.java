@@ -17,10 +17,10 @@ public interface Student {
 	class AddressInfo{
 		String city;
 		String country;
-		Long pincode;
+		int pincode;
 	}
 
 	String getAddressInfo();
-	void setAddressInfo(String city, String country, Long pincode);
+	void setAddressInfo(String city, String country, int pincode);
 	
 }
